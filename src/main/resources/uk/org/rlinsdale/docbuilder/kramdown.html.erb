@@ -1,0 +1,55 @@
+<!--
+Copyright (C) 2015 Richard Linsdale (richard.linsdale at blueyonder.co.uk)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!--
+    Author     : Richard Linsdale (richard.linsdale at blueyonder.co.uk)
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${doc.ssprefix|}css/docbuilder.css">
+        <title>${doc.title}</title>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <div>
+            <header class="inverse_centred">
+                <h1 class="headertext">${doc.header}</h1>
+                <h2 class="taglinetext">${doc.tagline|}</h2>
+            </header>
+        </div>
+        <!-- MENU OF LINKS -->
+        <div class="tab_content">
+            <section class="tab_section">
+                ${doc.menu}
+            </section>
+        </div>
+        <!-- MAIN CONTENT -->
+        <div class="main_content">
+            <section class="main_section_left">
+                <%= @body %>
+            </section>
+        </div>
+        <!-- FOOTER  -->
+        <div>
+            <footer class="inverse_centred">
+                <span class="footertext">${doc.name} created and maintained by <a href="http://www.rlinsdale.org.uk">Richard Linsdale</a> &COPY;</span>
+            </footer>
+        </div>
+    </body>
+</html>
