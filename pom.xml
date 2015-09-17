@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>uk.org.rlinsdale.poms</groupId>
-        <artifactId>java-application</artifactId>
+        <artifactId>java-jar</artifactId>
         <version>2.0.0</version>
     </parent>
     
@@ -16,14 +16,14 @@
     
     <properties>
         <project_key>docbuilder</project_key>
-        <release>1</release>
-        <ghpagesroot>docbuilder</ghpagesroot>
-        <mainclass>uk.org.rlinsdale.docbuilder.DocBuilder</mainclass>
-        <brandingToken>docbuilder</brandingToken>
-        <javadoctitle>Doc Builder</javadoctitle>
-        <javadocname>docbuilder</javadocname>
-        <ghpagesroot>docbuilder</ghpagesroot>
-        <javaSource>1.8</javaSource>
-        <javaTarget>1.8</javaTarget>
     </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>uk.org.rlinsdale</groupId>
+            <artifactId>kramdownlibrary</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
 </project>

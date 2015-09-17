@@ -17,6 +17,8 @@
 package uk.org.rlinsdale.docbuilder;
 
 import java.io.File;
+import uk.org.rlinsdale.kramdownlibrary.Kramdown;
+import uk.org.rlinsdale.kramdownlibrary.SubstitutionProperties;
 
 /**
  *
@@ -30,6 +32,12 @@ public class DocBuilder {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        (new Kramdown()).createHTML(new File(args[0]), new File(args[1]));
+        SubstitutionProperties props = new SubstitutionProperties();
+        if (args.length == 3 && args[2].equals("-D")) {
+            props.addDummyEnvironmentProperties();
+        } else {
+            props.addEnvironmentProperties();
+        }
+        (new Kramdown()).createHTML(new File(args[0]), new File(args[1]), props);
     }
 }
