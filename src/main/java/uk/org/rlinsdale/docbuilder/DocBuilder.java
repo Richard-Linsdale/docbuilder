@@ -32,12 +32,27 @@ public class DocBuilder {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        SubstitutionProperties props = new SubstitutionProperties();
-        if (args.length == 3 && args[2].equals("-D")) {
-            props.addDummyEnvironmentProperties();
-        } else {
-            props.addEnvironmentProperties();
+        if (args.length == 0 ) {
+            return; // exit if no parameters
         }
-        (new Kramdown()).createHTML(new File(args[0]), new File(args[1]), props);
+        SubstitutionProperties props = new SubstitutionProperties();
+        switch (args[0]) {
+            case "-D" :
+                props.addDummyEnvironmentProperties();
+                (new Kramdown()).createHTML(new File(args[1]), new File(args[2]), props);
+                return;
+            case "-T":
+                props.addDummyEnvironmentProperties();
+                // props.setProperty("project-key", "nbpcg");
+                (new CommonIndexFile()).update(new File(args[1]), new File(args[2]), props);
+                return;
+            case  "-R":
+                props.addEnvironmentProperties();
+                (new CommonIndexFile()).update(new File(args[1]), new File(args[2]), props);
+                return;
+            default:
+                props.addEnvironmentProperties();
+                (new Kramdown()).createHTML(new File(args[0]), new File(args[1]), props);
+        }
     }
 }
