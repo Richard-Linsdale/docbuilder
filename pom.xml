@@ -4,12 +4,12 @@
     <parent>
         <groupId>uk.org.rlinsdale.poms</groupId>
         <artifactId>java-jar</artifactId>
-        <version>2.0.0</version>
+        <version>2.0.2</version>
     </parent>
     
     <groupId>uk.org.rlinsdale</groupId>
     <artifactId>docbuilder</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     
     <name>Doc Builder</name>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>uk.org.rlinsdale</groupId>
             <artifactId>kramdownlibrary</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
             <type>jar</type>
         </dependency>
     </dependencies>
